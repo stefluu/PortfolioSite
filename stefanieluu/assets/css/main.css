@@ -1728,9 +1728,18 @@ input, select, textarea {
 
 	header.special {
 		margin-bottom: 5em;
-		padding-top: 7em;
+		padding-top: 4em;
 		position: relative;
+		text-align: left;
+	}
+
+	.reasons{
 		text-align: center;
+	}
+
+	.reasons span{
+		font-size: 20px;
+		text-decoration: underline;
 	}
 
 		header.special:before, header.special:after {
@@ -1912,56 +1921,24 @@ input, select, textarea {
 			text-decoration: none;
 			top: 0;
 			width: 2.25em;
+			background: #4165cb;
+			color: white;
 		}
 
 			.icon.circle:hover {
 				top: -0.2em;
+				background: #90a7e6;
 			}
 
-			.icon.circle.fa-twitter {
-				background: #70aecd;
-				color: #fff;
-			}
-
-				.icon.circle.fa-twitter:hover {
-					background: #7fb7d2;
-				}
-
-			.icon.circle.fa-facebook {
-				background: #7490c3;
-				color: #fff;
-			}
-
-				.icon.circle.fa-facebook:hover {
-					background: #829bc9;
-				}
-
-			.icon.circle.fa-google-plus {
-				background: #db6b67;
-				color: #fff;
-			}
-
-				.icon.circle.fa-google-plus:hover {
-					background: #df7b77;
-				}
-
-			.icon.circle.fa-github {
-				background: #dcad8b;
+			/* .icon.circle.fa-github {
+				background: #4165cb;
 				color: #fff;
 			}
 
 				.icon.circle.fa-github:hover {
-					background: #e1b89b;
-				}
+					background: #90a7e6;
+				} */
 
-			.icon.circle.fa-dribbble {
-				background: #da83ae;
-				color: #fff;
-			}
-
-				.icon.circle.fa-dribbble:hover {
-					background: #df93b8;
-				}
 
 		.icon.featured {
 			cursor: default;
@@ -2022,13 +1999,14 @@ input, select, textarea {
 
 	ul.featured-icons {
 		cursor: default;
-		margin: -0.75em 0 0 0;
+		/* margin: -0.75em 0 0 0; */
 		opacity: 0.6;
 		overflow: hidden;
 		position: relative;
 		list-style: none;
 		padding-left: 0;
 		width: 900px;
+		margin-left: 20%;
 	}
 
 		ul.featured-icons li {
@@ -2202,7 +2180,7 @@ input, select, textarea {
 		}
 
 		.wrapper.style2 {
-			background-color: #83d3c9;
+			background-color: #4e3d60;
 			opacity: 0.8;
 			background-image: url("images/light-bl.svg"), url("images/light-br.svg");
 			background-position: bottom left, bottom right;
@@ -2292,7 +2270,8 @@ input, select, textarea {
 	}
 
 	#header {
-		background: #fff;
+		/* background: #fff; */
+		background-image: linear-gradient(#7099e2, #b3cdec, #d7e1ec);
 		box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.075);
 		color: inherit;
 		cursor: default;
@@ -2303,6 +2282,7 @@ input, select, textarea {
 		top: 0;
 		width: 100%;
 		z-index: 10000;
+		height: 55px;
 	}
 
 		#header h1 {
@@ -2358,6 +2338,8 @@ input, select, textarea {
 
 					#header nav ul li.submenu > a {
 						text-decoration: none;
+						color: white;
+						font-weight: bold;
 					}
 
 						#header nav ul li.submenu > a:before {
@@ -2608,18 +2590,38 @@ input, select, textarea {
 			}
 
 	body.index #main {
-		padding-top: 5em;
+		padding-top: 0em;
 	}
+
+	.profilepic{
+		border-radius: 50%;
+		width: 200px;
+		height: 200px;
+		margin-left: 150px;
+	}
+
+	.intro{
+		display: flex;
+		flex-direction: row;
+		margin-left: 75px;
+	}
+
+	/* .intro section{
+		margin-left: 100px;
+	} */
 
 /* CTA */
 
 	#cta {
 		background-attachment: scroll, scroll, scroll, fixed;
 		background-color: #645862;
-		background-image: url("images/light-tl.svg"), url("images/light-tr.svg"), url("images/overlay.png"), url("../../images/banner.jpg");
+		background-image: url("../../images/cave.jpg");
+		/* background-image: url("images/light-tl.svg"), url("images/light-tr.svg"), url("images/overlay.png"), url("../../images/banner.jpg"); */
 		background-position: top left, top right, top left, bottom center;
 		background-repeat: no-repeat, no-repeat, repeat, no-repeat;
-		background-size: 25em, 25em, auto, cover;
+		/* background-size: 50em, 50em, auto, cover; */
+		background-size: 100%;
+		background-position-y: 27%;
 		color: #fff;
 		padding: 5em;
 		text-align: center;
@@ -2628,6 +2630,21 @@ input, select, textarea {
 		#cta header {
 			margin-bottom: 2em;
 		}
+
+	.cta-box{
+		-moz-animation: reveal-banner 1s 0.25s ease-in-out;
+		-webkit-animation: reveal-banner 1s 0.25s ease-in-out;
+		-ms-animation: reveal-banner 1s 0.25s ease-in-out;
+		animation: reveal-banner 1s 0.25s ease-in-out;
+		-moz-animation-fill-mode: forwards;
+		-webkit-animation-fill-mode: forwards;
+		-ms-animation-fill-mode: forwards;
+		animation-fill-mode: forwards;
+		background-image: linear-gradient(rgba(52, 27, 43, 1.5), transparent);
+		color: #fff;
+		width: 500px;
+		margin: auto;
+	}
 
 /* Footer */
 
@@ -3294,6 +3311,11 @@ input, select, textarea {
 			body.contact #main {
 				padding-bottom: 0;
 			}
+
+			#specialcontainer{
+				padding-top: 60px;
+			}
+
 
 		/* CTA */
 
