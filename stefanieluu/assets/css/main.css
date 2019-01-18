@@ -2027,9 +2027,22 @@ input, select, textarea {
 				width: 1em;
 			}
 
+				#bigger-icon{
+					font-size: 150px;
+					padding-left: 25px;
+				}
+
+				#bigger-icon last{
+					padding-left: 0px;
+				}
+
+
+
 	/* .featured-icons{
 		font-size: 100px;
 	} */
+
+
 
 /* Buttons */
 
@@ -2173,6 +2186,7 @@ input, select, textarea {
 	.wrapper {
 		margin-bottom: 5em;
 		padding: 50px;
+		padding-bottom: 0px;
 	}
 
 		.wrapper.style1 {
