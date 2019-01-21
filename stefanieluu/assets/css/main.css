@@ -3369,3 +3369,11 @@ input, select, textarea {
 			}
 
 	}
+
+#project-rows{
+	justify-content: center;
+}
+
+.project-name{
+	font-size: 25px;
+}
