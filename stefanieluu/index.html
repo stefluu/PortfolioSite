@@ -9,10 +9,92 @@
 		<title>Stefanie Luu.</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/v4-shims.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
 	</head>
+
+	<!-- Modal -->
+	<!-- Contact Modal -->
+		<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModal"
+			aria-hidden="true" style="display: none">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header" id="contactModalHeader">
+						<h5 class="modal-title" id="contactModalTitle">Send Me a Message!</h5>
+					</div>
+					<section>
+						<header class="special container">
+							<span class="icon fa-envelope" id="envelope"></span>
+						</header>
+						<div class="modal-body">
+							<form class="modalForm" data-netlify="true">
+								<div class="row gtr-50">
+									<div class="col-6 col-12-mobile">
+										<input type="text" name="name" placeholder="Name" />
+									</div>
+									<div class="col-6 col-12-mobile">
+										<input type="text" name="email" placeholder="Email" />
+									</div>
+									<div class="col-12">
+										<input type="text" name="subject" placeholder="Subject" />
+									</div>
+									<div class="col-12">
+										<textarea name="message" placeholder="Message" rows="7"></textarea>
+									</div>
+									<div class="col-12">
+										<button input type="submit">Send</button>
+									</div>
+								</div>
+								<!-- <textarea></textarea>
+								<button input type= "submit" >Send</button> -->
+
+					</section>
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	<!-- Sent Modal -->
+		<div class="modal fade" id="sentModal" tabindex="-1" role="dialog" aria-labelledby="contactModal" aria-hidden="true"
+			style="display: none">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header" >
+						<h5 class="modal-title" id="sentModalTitle">Sent!</h5>
+					</div>
+					<div class="modal-body">
+						<p>I look forward to getting in touch with you!</p>
+						<p>Thank you!</p>
+						<p>-Stefanie Luu</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	<!-- Resume Modal -->
+		<div class="modal fade" id="resumeModal" tabindex="-1" role="dialog" aria-labelledby="resumeModal" aria-hidden="true"
+			style="display: none">
+			<div class="modal-dialog modal-dialog-centered" role="document" id="resumeDialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="resumeModalTitle">My Resume</h5>
+					</div>
+					<div class="modal-body">
+						<embed src="resume/StefanieLuu_Resume.pdf#toolbar=0" height="100%" width="100%"></embed>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	
 	<body class="index is-preload">
 		<div id="page-wrapper">
 
@@ -25,26 +107,25 @@
 							<li class="submenu">
 								<a href="#">Jump to...</a>
 								<ul>
-									<li><a href="left-sidebar.html">Left Sidebar</a></li>
-									<li><a href="right-sidebar.html">Right Sidebar</a></li>
-									<li><a href="no-sidebar.html">No Sidebar</a></li>
-									<li><a href="contact.html">Contact</a></li>
-									<li class="submenu">
-										<a href="#">Submenu</a>
-										<ul>
-											<li><a href="#">Dolore Sed</a></li>
-											<li><a href="#">Consequat</a></li>
-											<li><a href="#">Lorem Magna</a></li>
-											<li><a href="#">Sed Magna</a></li>
-											<li><a href="#">Ipsum Nisl</a></li>
+									<li><a href="#main">Why Software Development?</a></li>
+									<li><a href="#technologies">Technologies</a></li>
+									<li><a href="#resume">Resume</a></li>
+									<li>
+										<a href="#projects">Projects</a>
+										<ul id="projectsSubmenu">
+											<li><a href="#instacube">InstaCube/Insta^3</a></li>
+											<li><a href="#colorOut">ColorOut</a></li>
+											<li><a href="#boredNoMore">BoredNoMore</a></li>
 										</ul>
 									</li>
 								</ul>
 							</li>
-							<li><a href="#" class="button primary">Contact</a></li>
+							<li><button type="button" class="button primary" id="firstContactButton" data-toggle="modal" data-target="#contactModal">Contact</button></li>
 						</ul>
 					</nav>
 				</header>
+
+
 
 			<!-- Banner -->
 				<section id="banner">
@@ -71,7 +152,7 @@
 						<!-- <br /> -->
 						<footer>
 							<ul class="buttons stacked">
-								<li><a href="#main" class="button fit scrolly">Take a look around</a></li>
+								<li><a href="#main" class="button fit scrolly" id="takeLookAround">Take a look around</a></li>
 							</ul>
 						</footer>
 
@@ -108,9 +189,9 @@
 							
 						</div>
 					</header>
-
+				
 					<!-- One -->
-						<section class="wrapper style2 container special-alt">
+						<section class="wrapper style2 container special-alt" id="technologies">
 							<div class="row gtr-50">
 								<div class="col-8 col-12-narrower">
 
@@ -147,16 +228,16 @@
 						</section>
 
 					<!-- Two -->
-						<section class="wrapper style1 container special">
+						<section class="wrapper style1 container special" id="resume">
 							<div class="row">
 								<div class="col-12 col-12-narrower">
 
-									<section>
-										<span class="icon featured fa-check"></span>
+									<section class="resumeChildren" data-toggle="modal" data-target="#resumeModal">
+										<span class="icon featured fa-check" id="resumeCheck" ></span>
 										<header>
-											<h2>Download my Resume!</h2>
+											<h2 type="button" id="resumeButton" >Take a look at my Resume!</h2>
 										</header>
-										<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
+										<!-- <p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p> -->
 									</section>
 
 								</div>
@@ -186,7 +267,7 @@
 						</section>
 
 					<!-- Three -->
-						<section class="wrapper style3 container special">
+						<section class="wrapper style3 container special" id="projects">
 
 							<header class="major">
 								<h2>These are my <strong>projects</strong>:</h2>
@@ -198,10 +279,10 @@
 							</header>
 
 							<div class="row" id="project-rows">
-								<div class="col-8 col-12-narrower">
+								<div class="col-8 col-12-narrower" id="instacube">
 
 									<section>
-										<a href="https://instacube.herokuapp.com" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+										<a href="https://instacube.herokuapp.com" class="image featured"><img src="images/instacube_screenshot.png" alt="" /></a>
 										<header>
 											<a href="https://instacube.herokuapp.com">
 												<strong><h3 class="project-name">InstaCube/Insta^3</h3></strong>												
@@ -212,10 +293,10 @@
 									</section>
 
 								</div>
-								<div class="col-8 col-12-narrower">
+								<div class="col-8 col-12-narrower" id="colorOut">
 
 									<section>
-										<a href="https://stefluu.github.io/ColorOut" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+										<a href="https://stefluu.github.io/ColorOut" class="image featured"><img src="images/colorout.png" alt="" /></a>
 										<header>
 											<a href="https://stefluu.github.io/ColorOut">
 												<strong><h3 class="project-name">ColorOut</h3></strong>
@@ -228,10 +309,10 @@
 								</div>
 							</div>
 							<div class="row" id="project-rows">
-								<div class="col-8 col-12-narrower">
+								<div class="col-8 col-12-narrower" id="boredNoMore">
 
 									<section>
-										<a href="https://borednomore.herokuapp.com" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+										<a href="https://borednomore.herokuapp.com" class="image featured"><img src="images/borednomore.png" alt="" /></a>
 										<header>
 											<a href="https://borednomore.herokuapp.com">
 												<strong><h3 class="project-name">BoredNoMore</h3></strong>
@@ -275,8 +356,9 @@
 						</header>
 						<footer>
 							<ul class="buttons">
-								<li><a href="#" class="button primary">Contact</a></li>
+								<!-- <li><a href="contact.html" class="button primary">Contact</a></li> -->
 								<!-- <li><a href="#" class="button">LOL Wut</a></li> -->
+								<li><button type="button" class="button primary" data-toggle="modal" data-target="#contactModal">Contact</button></li>
 							</ul>
 						</footer>
 					</div>
@@ -289,10 +371,6 @@
 					<ul class="icons">
 						<li><a href="https://github.com/stefluu" class="icon circle fa-github"><span class="label">Github</span></a></li>
 						<li><a href="https://www.linkedin.com/in/stefanieluu/" class="icon circle fa-linkedin"><span class="label">Dribbble</span></a></li>
-					</ul>
-
-					<ul class="copyright">
-						<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 					</ul>
 
 				</footer>
